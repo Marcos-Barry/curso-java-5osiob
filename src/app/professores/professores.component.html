@@ -1,0 +1,76 @@
+<br />
+<br />
+<table class="table" style="width: 80%; text-align: center; margin: auto">
+  <thead>
+    <tr>
+      <td scope="col"><b>Professor</b></td>
+      <td scope="col"><b>Email</b></td>
+      <td scope="col"><b>Telefone</b></td>
+      <td scope="col"><b>Curso</b></td>
+      <td scope="col"><b>Alterar</b></td>
+      <td scope="col"><b>Excluir</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="professor : ${professores}">
+      <td th:text="${professor.nome}"></td>
+      <td th:text="${professor.email}"></td>
+      <td th:text="${professor.telefone}"></td>
+      <td th:text="${professor.curso.nome}"></td>
+
+      <td>
+        <a
+          th:href="@{/editando/{id}(id=${professor.id})}"
+          class="btn btn-warning"
+          >Editar</a
+        >
+      </td>
+      <td>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          Apagar
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
+              </div>
+              <div class="modal-body">
+                <p>Tem certeza que deseja remover Professor ?</p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <a
+                  th:href="@{'/professor/delete/{id}'(id=${professor.id})}"
+                  class="btn btn-danger"
+                  >Remover</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

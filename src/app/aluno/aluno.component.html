@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Cadastro de Aluno</h4>
+      <form
+        class="needs-validation"
+        action="#"
+        method="post"
+        th:action="@{/aluno}"
+        th:object="${aluno}"
+      >
+        <div class="mb-3">
+          <label>Nome:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              maxlength="255"
+              th:field="*{nome}"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label>Data de Nascimento:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              type="date"
+              th:field="*{dataNascimento}"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label>Email:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              maxlength="100"
+              th:field="*{email}"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label>Genero:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              maxlength="11"
+              th:field="*{genero}"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label>Cidade:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              maxlength="11"
+              th:field="*{cidade}"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label>Telefone:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              maxlength="11"
+              th:field="*{telefone}"
+              required
+            />
+          </div>
+        </div>
+
+        <button
+          style="margin-left: 320px;"
+          class="btn btn-success"
+          type="submit"
+          value="getAlunoForm"
+        >
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

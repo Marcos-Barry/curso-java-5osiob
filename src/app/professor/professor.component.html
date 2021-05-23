@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Cadastro de Professor</h4>
+      <form
+        class="needs-validation"
+        action="#"
+        method="post"
+        th:action="@{/professor}"
+        th:object="${professor}"
+      >
+        <div class="mb-3">
+          <label>Nome:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              type="text"
+              th:field="*{nome}"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label>CPF:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              type="text"
+              th:field="*{cpf}"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label>Email:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              type="email"
+              th:field="*{email}"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label>Telefone:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              type="number"
+              th:field="*{telefone}"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label>Curso:</label>
+          <div class="input-group">
+            <select
+              name="curso_id"
+              th:field="*{curso}"
+              id="curso_id"
+              class="form-control"
+            >
+              <option
+                th:each="cursos : ${cursos}"
+                th:value="${cursos.id}"
+                th:text="${cursos.nome}"
+              >
+              </option
+            ></select>
+          </div>
+        </div>
+
+        <button
+          style="margin-left: 320px;"
+          class="btn btn-success"
+          type="submit"
+          value="getProfessorForm"
+        >
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<br />
+<br />
+<table class="table" style="width: 80%; text-align: center; margin: auto">
+  <thead>
+    <tr>
+      <td scope="col"><b>Aluno</b></td>
+      <td scope="col"><b>Email</b></td>
+      <td scope="col"><b>Data de Nascimento</b></td>
+      <td scope="col"><b>Cidade</b></td>
+      <td scope="col">Telefone</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="aluno : ${alunos}">
+      <td th:text="${aluno.nome}"></td>
+      <td th:text="${aluno.email}"></td>
+      <td th:text="${aluno.dataNascimento}"></td>
+      <td th:text="${aluno.cidade}"></td>
+      <td th:text="${aluno.telefone}"></td>
+      <td>
+        <a
+          th:href="@{/update/{id}(id=${aluno.id})}"
+          class="btn btn-outline-dark"
+          >Editar</a
+        >
+      </td>
+      <td>
+        <form
+          action="#"
+          th:action="@{'/aluno/delete/{id}'(id=${aluno.id})}"
+          th:method="delete"
+        >
+          <button type="submit" class="btn btn-outline-dark">
+            Apagar
+          </button>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table>

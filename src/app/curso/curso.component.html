@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Cadastro de Cursos</h4>
+      <form
+        class="needs-validation"
+        action="#"
+        method="post"
+        th:action="@{/curso}"
+        th:object="${curso}"
+      >
+        <div class="mb-3">
+          <label for="username">Nome do Curso:</label>
+          <div class="input-group">
+            <input class="form-control" th:field="*{nome}" required />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label>Área:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              maxlength="100"
+              th:field="*{area}"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label>Quantidade de aulas:</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              maxlength="11"
+              th:field="*{aulas}"
+              required
+            />
+          </div>
+        </div>
+
+        <button
+          style="margin-left: 320px;"
+          class="btn btn-success"
+          type="submit"
+          value="getCursoForm"
+        >
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
