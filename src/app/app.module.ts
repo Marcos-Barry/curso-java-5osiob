@@ -15,6 +15,7 @@ import { AlunosComponent } from './alunos/alunos.component';
 import { ProfessoresComponent } from './professores/professores.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { FooterComponent } from './footer/footer.component';
+import { ApiService } from './api.service';
 
 @NgModule({
   imports: [
@@ -45,6 +46,7 @@ import { FooterComponent } from './footer/footer.component';
     SobreComponent,
     FooterComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [ApiService]
 })
 export class AppModule {}
