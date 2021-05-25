@@ -6,7 +6,7 @@
         <div class="mb-3">
           <label for="username">Nome do Curso:</label>
           <div class="input-group">
-            <input class="form-control" [(ngModel)] = "curso.nome" required />
+            <input class="form-control" ngModel name="curso.nome" required />
           </div>
         </div>
         <div class="mb-3">
@@ -15,7 +15,7 @@
             <input
               class="form-control"
               maxlength="100"
-              [(ngModel)] = "curso.area"
+              ngModel name = "curso.area"
               required
             />
           </div>
@@ -27,7 +27,7 @@
             <input
               class="form-control"
               maxlength="11"
-              [(ngModel)] = "curso.aulas"
+              ngModel name = "curso.aulas"
               required
             />
           </div>
@@ -37,7 +37,7 @@
           style="margin-left: 320px;"
           class="btn btn-success"
           type="submit"
-          [disable]="frm.invalid"
+          [disabled]="frm.invalid"
         >
           Cadastrar
         </button>
