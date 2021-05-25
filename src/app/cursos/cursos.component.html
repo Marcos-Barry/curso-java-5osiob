@@ -12,17 +12,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr th:each="curso : ${cursos}">
-      <td th:text="${curso.id}"></td>
-      <td th:text="${curso.nome}"></td>
-      <td th:text="${curso.area}"></td>
-      <td th:text="${curso.aulas}"></td>
+    <tr *ngFor="let response of ApiService.updateList">
+      <td class="border border-primary">{{response.id}}</td>
+      <td class="border border-primary">{{response.nome}}</td>
+      <td class="border border-primary">{{response.area}}</td>
+      <td class="border border-primary">{{response.aulas}}</td>
       <td>
-        <a th:href="@{/edita/{id}(id=${curso.id})}" class="btn btn-warning"
-          >Editar</a
-        >
+        <a th:href="@{/edita/{id}(id=${curso.id})}" class="btn btn-warning">Editar</a>
       </td>
-      <td>
+      <td class="border border-primary">
         <button
           type="button"
           class="btn btn-danger"
@@ -33,14 +31,8 @@
         </button>
 
         <!-- Modal -->
-        <div
-          class="modal fade"
-          id="exampleModal"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -57,12 +49,8 @@
                 >
                   Cancelar
                 </button>
-                <a
-                  th:href="@{/curso/delete/{id}(id=${curso.id})}"
-                  class="btn btn-danger"
-                >
-                  Apagar</a
-                >
+                <a th:href="@{/curso/delete/{id}(id=${curso.id})}" class="btn btn-danger">
+                  Apagar</a>
               </div>
             </div>
           </div>
