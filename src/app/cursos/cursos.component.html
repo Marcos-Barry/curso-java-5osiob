@@ -12,11 +12,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let response of ApiService.updateList">
-      <td class="border border-primary">{{response.id}}</td>
-      <td class="border border-primary">{{response.nome}}</td>
-      <td class="border border-primary">{{response.area}}</td>
-      <td class="border border-primary">{{response.aulas}}</td>
+    <tr *ngFor="let curso of cursos">
+      <td class="border border-primary">{{curso.id}}</td>
+      <td class="border border-primary">{{curso.nome}}</td>
+      <td class="border border-primary">{{curso.area}}</td>
+      <td class="border border-primary">{{curso.aulas}}</td>
       <td>
         <a th:href="@{/edita/{id}(id=${curso.id})}" class="btn btn-warning">Editar</a>
       </td>
